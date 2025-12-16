@@ -21,7 +21,7 @@
     <h2><i class="fa-solid fa-circle-info"></i>Details:</h2>
     <p><strong>Dish Name:</strong> <%= food.dishName %></p>
     <p><i class="fa-solid fa-utensils"></i><strong>Dish Type:</strong> <%= food.dishType %></p>
-    <p><i class="fa-solid fa-house-heart"></i><strong>Is it homeMade?:</strong> <%= food.isIthomeMade === true ?  'Yes 💕' :  'No 😔' %></p> 
+    <p><i class="fa-solid fa-house-heart"></i><strong>Is it homeMade ? :</strong> <%= food.isIthomeMade === true ?  'Yes !' :  'No :( !' %></p> 
     </div>
    
     <% if (user && food.owner._id.equals(user._id)) { %> 
