@@ -7,11 +7,17 @@ const foodSchema = new mongoose.Schema({
    },
    dishType: {
     type: String,
-    enum:['pastries','desserts','drinks']
+    enum:['pastries','desserts','drinks'],
+    required: true,
    },
    isIthomeMade: {
     type: Boolean
-   }
+   },
+ owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+}
+
 });
 
 const Foods = mongoose.model('Foods', foodSchema);

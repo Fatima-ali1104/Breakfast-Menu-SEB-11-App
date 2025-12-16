@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= food.dishName  %></title>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs')  %>
+    <h1>Edit <%= food.dishName  %></h1>
+    
+    <form action="/food/<%= food._id  %>?_method=PUT" method="POST">
+        <label for="dishName">Dish Name:</label>
+        <input type="text" name="dishName" id="dishName" value="<%= food.dishName  %>"/>
+
+        <label for="dishType">Dish Type:</label>
+        <select id="dishType" name="dishType" >
+            <option value="pastries">Pastries</option>
+             <option value="desserts">Desserts</option>
+             <option value="drinks">Drinks</option>
+            
+        </select>
+
+        <label for="isIthomeMade">Is It homeMade?</label>
+        <input type="checkbox" name="isIthomeMade" id="isIthomeMade" <%= food.isIthomeMade ? 'checked' : '' %>/>
+
+        <button type="submit">Update This Dish</button>
+    </form>
+</body>
+</html>

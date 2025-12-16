@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+</head>
+<body>
+    
+    <%- include('../partials/_navbar.ejs')  %>
+    <h1>Add A Yummy Dish!</h1>
+    <form action="/food/menu" method="POST">
+        <label for="dishName">Dish Name:</label>
+        <input type="text" name="dishName" id="dishName" required/>
+
+        <label for="dishType">Dish Type:</label>
+        <select id="dishType" name="dishType">
+            <option value="pastries">Pastries</option>
+             <option value="desserts">Desserts</option>
+             <option value="drinks">Drinks</option>
+            
+        </select>
+
+        <label for="isIthomeMade">Is It homeMade?</label>
+        <input type="checkbox" name="isIthomeMade" id="isIthomeMade" />
+
+        <button type="submit">Add The Dish</button>
+    </form>
+</body>
+</html>

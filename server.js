@@ -3,21 +3,16 @@ require("dotenv").config() // allows us to use the .env variables
 require('./config/database.js')
 const express = require("express") //importing express package
 const app = express() // creates a express application
-const path = require('path');
 const session = require('express-session');
 const { MongoStore } = require('connect-mongo');
 
-const mongoose = require("mongoose") // importing mongoose
 const morgan = require("morgan")
 const methodOverride = require("method-override")
 const port = process.env.PORT ? process.env.PORT : '3000';
-
+const passUserToView = require("./middleware/pass-user-to-view.js");
 
 const authCtrl = require('./controllers/auth');
 const foodCtrl=  require('./controllers/food');
-
-
-
 
 // Middleware
 app.use(express.static('public')); //all static files are in the public folder
@@ -34,50 +29,17 @@ app.use(
     }),
   })
 );
+app.use(passUserToView)
 
 
-
+// Routes
 app.get('/', async (req, res) => {
   res.render('index.ejs');
 });
 
 app.use('/auth', authCtrl);
+app.use('/food', foodCtrl)
 
-
-
-
-
-
-
-
-
-
-
-
-
-// Routes go here
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('App is running on port 3000')
 }) // app will be waiting for requests on port 3000
-
-
-
-

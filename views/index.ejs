@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Page</title>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
      <%- include('./partials/_navbar.ejs') %>
-    <h1>Welcome to "Breakfast Menu SEB-11 App"</h1>
+    <h1>"Welcome to "Breakfast Menu SEB-11 App"</h1>
+    <div class="container">
+    <img src="/static/indexpic.PNG" alt="img" class="img">
+    </div>
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span id="closePopup" class="close">&times;</span>
+    <h2>WELCOME SOFTWARE ENGINEER!</h2>
+    <p>Here you can see the SEB-11 menu and add the dishes you will bring.</p>
+  </div>
+</div>
+
+<script>
+const popup = document.getElementById('popup');
+const closeBtn = document.getElementById('closePopup');
+
+window.addEventListener('load', () => {
+  popup.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target == popup) {
+    popup.style.display = 'none';
+  }
+});
+</script>
+
 </body>
 </html>

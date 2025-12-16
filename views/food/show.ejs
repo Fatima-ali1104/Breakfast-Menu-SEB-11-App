@@ -1,0 +1,35 @@
+<!-- views/listings/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A dish <%= food.dishName %> owned by <%= food.owner.username%></title>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <div class="details-card">
+
+    <h1><i class="fa-solid fa-cookie-bite"></i> <%= food.dishName %> owned by <%= food.owner.username%></h1>
+    <h2><i class="fa-solid fa-circle-info"></i>Details:</h2>
+    <p><strong>Dish Name:</strong> <%= food.dishName %></p>
+    <p><i class="fa-solid fa-utensils"></i><strong>Dish Type:</strong> <%= food.dishType %></p>
+    <p><i class="fa-solid fa-house-heart"></i><strong>Is it homeMade?:</strong> <%= food.isIthomeMade === true ?  'Yes 💕' :  'No 😔' %></p> 
+    </div>
+   
+    <% if (user && food.owner._id.equals(user._id)) { %> 
+      <form action="/food/<%= food._id %>?_method=DELETE" method="POST">
+        <button type="submit"><i class="fa-solid fa-trash"></i>Delete this Dish</button>
+      </form>
+      <a class="add-dish" href="/food/<%= food._id %>/edit"><i class="fa-solid fa-pen"></i>Edit this Dish</a>
+    <% } %>
+
+  </body>
+</html>
