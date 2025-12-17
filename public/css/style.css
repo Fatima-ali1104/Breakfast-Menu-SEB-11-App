@@ -1,7 +1,7 @@
-/* ===== Fonts ===== */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-/* ===== Reset ===== */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +9,14 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* ===== Body ===== */
+
 body {
   background: linear-gradient(135deg, #fff5f9, #f8f2ff);
   color: #444;
   min-height: 100vh;
 }
 
-/* ===== Navbar ===== */
+
 nav {
   background-color: #ffffff;
   padding: 18px 35px;
@@ -38,7 +38,7 @@ nav a:hover {
   color: #ff7ab6;
 }
 
-/* ===== Headings ===== */
+
 h1 {
   text-align: center;
   margin: 40px 0 25px;
@@ -46,7 +46,7 @@ h1 {
   color: #7a507a;
 }
 
-/* ===== Menu Category Buttons ===== */
+
 .menu-links {
   display: flex;
   justify-content: center;
@@ -69,7 +69,7 @@ h1 {
   background-color: #ffd0e5;
 }
 
-/* ===== Cards List ===== */
+
 ul {
   list-style: none;
   max-width: 700px;
@@ -86,7 +86,7 @@ li {
   font-size: 15px;
 }
 
-/* ===== Add Dish Button ===== */
+
 .add-dish {
   display: block;
   width: fit-content;
@@ -105,7 +105,7 @@ li {
   box-shadow: 0 6px 18px rgba(207, 166, 255, 0.5);
 }
 
-/* ===== Forms ===== */
+
 form {
   max-width: 430px;
   margin: 45px auto;
@@ -131,7 +131,7 @@ select:focus {
   border-color: #cfa6ff;
 }
 
-/* ===== Buttons ===== */
+
 button {
   width: 100%;
   padding: 14px;
@@ -149,7 +149,7 @@ button:hover {
   opacity: 0.85;
 }
 
-/* ===== Responsive ===== */
+
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -162,7 +162,7 @@ button:hover {
   }
 }
 
-/* إخفاء البوب أب بشكل افتراضي */
+
 .popup {
   display: -moz-popup; 
   position: fixed; 
@@ -174,7 +174,7 @@ button:hover {
   background-color: rgba(0,0,0,0.5); 
 }
 
-/* محتوى البوب أب */
+
 .popup-content {
  
   background-color: #fff;
@@ -187,7 +187,7 @@ button:hover {
   font-family: Arial, sans-serif;
 }
 
-/* زر الإغلاق */
+
 .close {
   float: right;
   font-size: 28px;
